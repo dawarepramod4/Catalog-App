@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter_application_1/pages/widgets/drawer.dart';
 
 class Homepage extends StatelessWidget {
   int i = 30;
@@ -14,7 +15,7 @@ class Homepage extends StatelessWidget {
           child: Text("My first Flutter App $i by $name " + name),
         ),
       ),
-      drawer: Drawer(),
+      drawer: Mydrawer(),
     );
   }
 }
