@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:flutter_application_1/pages/widgets/themes.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,24 +25,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-
-        // textTheme: GoogleFonts.latoTextTheme(),
-      ),
+      theme: myTheme.lightTheme,
       darkTheme: ThemeData(
           brightness: Brightness.dark, primarySwatch: Colors.deepOrange),
-      initialRoute: MyRoutes.homeroute,
+      initialRoute: MyRoutes.loginroute,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.loginroute: (context) => LoginPage(),
         MyRoutes.homeroute: (context) => Homepage()
       },
     );
-  }
-
-  bringveg({required bool th, int rupees = 100}) {
-    //sector 13
   }
 }
