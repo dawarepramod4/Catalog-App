@@ -1,0 +1,54 @@
+{
+    "products":[
+        {
+        "id": 2323,
+        "name": "Samsung Guru",
+        "desc": "best budget",
+        "price": 1500,
+        "color": "#33505a",
+        "image": "https://www.91-img.com/pictures/74844-v1-samsung-metro-b313-mobile-phone-large-1.jpg"
+        },
+        {
+            "id": 2324,
+        "name": "Samsung Galaxy",
+        "desc": "Smartphone",
+        "price": 15000,
+        "color": "#33505a",
+        "image":"https://m.media-amazon.com/images/I/71F4jU7MRUS._SX466_.jpg"
+        },
+        {
+            "id": 2325,
+        "name": "Apple Iphone 13 pro",
+        "desc": "best Brand",
+        "price": 53000,
+        "color": "#33505a",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDsPu86gj1HD2hfrE8bL59009ETiZVjVSd2hLpNM7-4339hTUoWFsUzUSMpV_nc3On5x0&usqp=CAU"
+        },
+        {
+            "id": 2326,
+        "name": "POCO C3",
+        "desc": "Smartphone",
+        "price": 10000,
+        "color": "#33505a",
+        "image":"https://www.winkart.in/wp-content/uploads/2020/12/Poco-C3-1.jpg"
+        },
+        {
+            "id": 2327,
+        "name": "Redmi 4a",
+        "desc": "budget Smartphone",
+        "price": 7999,
+        "color": "#33505a",
+        "image":"https://i.gadgets360cdn.com/large/redmi_4a_small_1502949424073.jpg?downsize=278:209&output-quality=80"
+        },
+        {
+            "id": 2327,
+        "name": "Samsung S20",
+        "desc": "budget Smartphone",
+        "price": 79999,
+        "color": "#33505a",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTkjcqdLMwBimzLdRrvHbcQCA9IcsVXkWRNA&usqp=CAU"
+        }
+        
+
+    ]
+}
