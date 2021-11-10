@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter_application_1/catalog.dart';
 import 'package:flutter_application_1/pages/widgets/drawer.dart';
 import 'package:flutter_application_1/pages/widgets/item_widget.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -38,13 +39,14 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Catalog App"),
+        title: const Text("Catalog App"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
+        // ignore: unnecessary_null_comparison
         child: (CatalogModel.items != null || CatalogModel.items.isNotEmpty)
             ? GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 20),
@@ -59,22 +61,30 @@ class _HomepageState extends State<Homepage> {
                         header: Container(
                           child: Text(
                             item.name,
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                           decoration: BoxDecoration(
                               color: Colors.deepPurple.withOpacity(0.7)),
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                         ),
-                        footer: Text(item.price.toString()),
+                        footer: Container(
+                          child: Text(
+                            item.price.toString(),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.7)),
+                          padding: const EdgeInsets.all(5),
+                        ),
                       ));
                 },
                 itemCount: CatalogModel.items.length,
               )
             : Center(
-                child: CircularProgressIndicator(),
+                child: const CircularProgressIndicator(),
               ),
       ),
-      drawer: Mydrawer(),
+      drawer: const Mydrawer(),
     );
   }
 }
