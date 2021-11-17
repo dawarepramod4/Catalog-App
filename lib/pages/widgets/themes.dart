@@ -20,4 +20,9 @@ class myTheme {
   static ThemeData get Darktheme => ThemeData(
         brightness: Brightness.dark,
       );
+
+  // color
+  static Color creamcolor = const Color(0xfff5f5f5);
+  static Color BluishColor = const Color(0xff403b58);
+
 }
