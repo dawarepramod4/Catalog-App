@@ -13,10 +13,12 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: myTheme.creamcolor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
+      backgroundColor: Theme.of(context).canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -24,12 +26,13 @@ class DetailPage extends StatelessWidget {
             "₹${catalog.price}".text.bold.xl3.red800.make(),
             ElevatedButton(
               onPressed: () {},
-              child: "Buy".text.make(),
+              child: "Add to cart".text.make(),
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(myTheme.BluishColor),
+                      // ignore: deprecated_member_use
+                      MaterialStateProperty.all(Theme.of(context).buttonColor),
                   shape: MaterialStateProperty.all(const StadiumBorder())),
-            ).pOnly(right: 8).wh(100, 50),
+            ).pOnly(right: 8).wh(120, 50),
           ],
         ).p16(),
       ),
@@ -49,14 +52,19 @@ class DetailPage extends StatelessWidget {
                   arcType: VxArcType.CONVEY,
                   child: Container(
                     width: context.screenWidth,
-                    color: Colors.white,
+                    color: Theme.of(context).cardColor,
                     child: Column(
                       children: [
                         catalog.name.text.xl3
-                            .color(myTheme.BluishColor)
+                            // ignore: deprecated_member_use
+                            .color(Theme.of(context).accentColor)
                             .bold
                             .make(),
                         catalog.desc.text.lg.caption(context).make(),
+                        "       Door bird has so floor on spoken seraphim though, surcease betook the my land. Floating thee is stillness faintly, velvet thy ghastly with devil clasp, gloating the seat there on, perfumed to tell word nights sure and so sainted, respiterespite."
+                            .text
+                            .make()
+                            .p16()
                       ],
                     ).pOnly(top: 64),
                   )),

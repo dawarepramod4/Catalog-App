@@ -35,10 +35,12 @@ class CatalogItem extends StatelessWidget {
                 "₹${catalog.price}".text.bold.xl.make(),
                 ElevatedButton(
                   onPressed: () {},
-                  child: "Buy".text.make(),
+                  child: "Add to cart".text.sm.make(),
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(myTheme.BluishColor),
+                          // ignore: deprecated_member_use
+                          MaterialStateProperty.all(
+                              Theme.of(context).buttonColor),
                       shape: MaterialStateProperty.all(const StadiumBorder())),
                 ).pOnly(right: 8),
               ],
@@ -46,7 +48,7 @@ class CatalogItem extends StatelessWidget {
           ],
         ))
       ],
-    )).white.rounded.square(140).make().py16();
+    )).color(Theme.of(context).cardColor).rounded.square(140).make().py16();
   }
 }
 

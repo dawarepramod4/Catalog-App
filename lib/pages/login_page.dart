@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   bool changebutton = false;
   final _formkey = GlobalKey<FormState>();
   moveToHome(BuildContext context) async {
-    if (_formkey.currentState!.validate() ) {
+    if (_formkey.currentState!.validate()) {
       setState(() {
         changebutton = true;
       });
@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: Theme.of(context).canvasColor,
         child: SingleChildScrollView(
           child: Form(
             key: _formkey,
@@ -86,7 +86,8 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40,
                       ),
                       Material(
-                        color: Colors.deepPurple,
+                        // ignore: deprecated_member_use
+                        color: Theme.of(context).buttonColor,
                         borderRadius:
                             BorderRadius.circular(changebutton ? 50 : 8),
                         child: InkWell(
