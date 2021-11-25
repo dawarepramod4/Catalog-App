@@ -35,13 +35,13 @@ class myTheme {
       // ignore: deprecated_member_use
       accentColor: Vx.white,
       appBarTheme: const AppBarTheme(
-          color: Colors.black,
+          color: Colors.white,
           elevation: 0.0,
           iconTheme: IconThemeData(color: Colors.white),
 
           // ignore: prefer_const_constructors
-          toolbarTextStyle: TextStyle(color: Colors.black),
-          titleTextStyle: TextStyle(color: Colors.black, fontSize: 20)));
+          toolbarTextStyle: TextStyle(color: Colors.white),
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20)));
 
   // color
   static Color creamcolor = const Color(0xfff5f5f5);

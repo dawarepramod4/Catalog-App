@@ -37,14 +37,9 @@ class Item {
 
 class CatalogModel {
   static List<Item>? items;
-  // // = [
-  //   Item(
-  //       id: 2323,
-  //       name: "Samsung Guru",
-  //       desc: "best budget",
-  //       price: 1500,
-  //       color: "#33505a",
-  //       image:
-  //           "https://www.91-img.com/pictures/74844-v1-samsung-metro-b313-mobile-phone-large-1.jpg")
-  // // ];
+//get item by id
+  static Item getById(int id) =>
+      items!.firstWhere((element) => element.id == id, orElse: null);
+// get item by position
+ static Item getByPosition(int position) => items![position];
 }
