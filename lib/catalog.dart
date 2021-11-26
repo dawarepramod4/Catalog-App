@@ -1,5 +1,5 @@
 class Item {
-  final num id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -38,8 +38,8 @@ class Item {
 class CatalogModel {
   static List<Item>? items;
 //get item by id
-  static Item getById(int id) =>
+  Item getById(int id) =>
       items!.firstWhere((element) => element.id == id, orElse: null);
 // get item by position
- static Item getByPosition(int position) => items![position];
+  static Item getByPosition(int position) => items![position];
 }

@@ -35,6 +35,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
   velocity_x: ^3.3.0
+  # add this line to your dependencies
+  fluttertoast: ^8.0.8
 dev_dependencies:
   flutter_test:
     sdk: flutter
