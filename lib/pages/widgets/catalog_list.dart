@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/cart.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'catalog_image.dart';
@@ -33,22 +35,50 @@ class CatalogItem extends StatelessWidget {
               buttonPadding: EdgeInsets.zero,
               children: [
                 "₹${catalog.price}".text.bold.xl.make(),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: "Add to cart".text.sm.make(),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          // ignore: deprecated_member_use
-                          MaterialStateProperty.all(
-                              Theme.of(context).buttonColor),
-                      shape: MaterialStateProperty.all(const StadiumBorder())),
-                ).pOnly(right: 8),
+                _AddToCart(catalog: catalog).pOnly(right: 8),
               ],
             )
           ],
         ))
       ],
     )).color(Theme.of(context).cardColor).rounded.square(140).make().py16();
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  final Item catalog;
+  const _AddToCart({
+    Key? key,
+    required this.catalog,
+  }) : super(key: key);
+
+  @override
+  State<_AddToCart> createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<_AddToCart> {
+  bool isadded = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isadded = isadded.toggle();
+        final _catalog = CatalogModel();
+        final _cart = CartModel();
+        _cart.add(widget.catalog);
+        _cart.catalog = _catalog;
+
+        setState(() {});
+      },
+      child: isadded
+          ? Icon(CupertinoIcons.check_mark_circled)
+          : "Add to cart".text.sm.make(),
+      style: ButtonStyle(
+          backgroundColor:
+              // ignore: deprecated_member_use
+              MaterialStateProperty.all(Theme.of(context).buttonColor),
+          shape: MaterialStateProperty.all(const StadiumBorder())),
+    );
   }
 }
 

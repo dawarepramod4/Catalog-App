@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/cart.dart';
 import 'package:flutter_application_1/pages/widgets/themes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -27,14 +28,16 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel();
     return SizedBox(
       height: 100,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        "₹10999".text.xl4.make(),
+        "₹${_cart.totalprice}".text.xl4.make(),
         40.widthBox,
         ElevatedButton(
           onPressed: () => {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Buying not supported yet".text.make()))
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: "Buying not supported yet".text.make()))
           },
           child: "Buy".text.make(),
           style: ButtonStyle(
@@ -54,15 +57,16 @@ class _CartList extends StatefulWidget {
 }
 
 class _CartListState extends State<_CartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 10,
+        itemCount: _cart.items.length,
         itemBuilder: (context, index) => ListTile(
               leading: Icon(CupertinoIcons.check_mark_circled),
               trailing: IconButton(
                   onPressed: () {}, icon: Icon(CupertinoIcons.clear_circled)),
-              title: "Item 123".text.make(),
+              title: _cart.items[index].name.text.make(),
             ));
   }
 }
