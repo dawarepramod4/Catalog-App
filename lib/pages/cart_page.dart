@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_application_1/pages/cart.dart';
 import 'package:flutter_application_1/pages/widgets/themes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -60,13 +61,25 @@ class _CartListState extends State<_CartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: _cart.items.length,
-        itemBuilder: (context, index) => ListTile(
-              leading: Icon(CupertinoIcons.check_mark_circled),
-              trailing: IconButton(
-                  onPressed: () {}, icon: Icon(CupertinoIcons.clear_circled)),
-              title: _cart.items[index].name.text.make(),
-            ));
+    return _cart.items.isEmpty
+        ? "Nothing to Show !"
+            .text
+            .center
+            .xl2
+            .color(Colors.grey)
+            .makeCentered()
+            .py64()
+        : ListView.builder(
+            itemCount: _cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+                  leading: Icon(CupertinoIcons.check_mark_circled),
+                  trailing: IconButton(
+                      onPressed: () {
+                        _cart.remove(_cart.items[index]);
+                        setState(() {});
+                      },
+                      icon: Icon(CupertinoIcons.clear_circled)),
+                  title: _cart.items[index].name.text.make(),
+                ));
   }
 }

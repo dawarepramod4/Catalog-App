@@ -7,6 +7,7 @@ import 'catalog_image.dart';
 import 'themes.dart';
 import '../../catalog.dart';
 import 'package:flutter_application_1/pages/detail_page.dart';
+import 'add_to_cart.dart';
 
 class CatalogItem extends StatelessWidget {
   final Item catalog;
@@ -35,7 +36,7 @@ class CatalogItem extends StatelessWidget {
               buttonPadding: EdgeInsets.zero,
               children: [
                 "₹${catalog.price}".text.bold.xl.make(),
-                _AddToCart(catalog: catalog).pOnly(right: 8),
+                AddtoCart(catalog: catalog).pOnly(right: 8),
               ],
             )
           ],
@@ -45,42 +46,7 @@ class CatalogItem extends StatelessWidget {
   }
 }
 
-class _AddToCart extends StatefulWidget {
-  final Item catalog;
-  const _AddToCart({
-    Key? key,
-    required this.catalog,
-  }) : super(key: key);
 
-  @override
-  State<_AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<_AddToCart> {
-  bool isadded = false;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        isadded = isadded.toggle();
-        final _catalog = CatalogModel();
-        final _cart = CartModel();
-        _cart.add(widget.catalog);
-        _cart.catalog = _catalog;
-
-        setState(() {});
-      },
-      child: isadded
-          ? Icon(CupertinoIcons.check_mark_circled)
-          : "Add to cart".text.sm.make(),
-      style: ButtonStyle(
-          backgroundColor:
-              // ignore: deprecated_member_use
-              MaterialStateProperty.all(Theme.of(context).buttonColor),
-          shape: MaterialStateProperty.all(const StadiumBorder())),
-    );
-  }
-}
 
 class CatalogList extends StatelessWidget {
   const CatalogList({Key? key}) : super(key: key);
