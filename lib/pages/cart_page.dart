@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_application_1/Store/store.dart';
+import 'package:flutter_application_1/catalog.dart';
 import 'package:flutter_application_1/pages/cart.dart';
 import 'package:flutter_application_1/pages/widgets/themes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -29,7 +31,9 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _cart = CartModel();
+    VxState.watch(context, on: []);
+    // final _cart = CartModel();
+    final CartModel _cart = (VxState.store as Mystore).cart;
     return SizedBox(
       height: 100,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
@@ -50,15 +54,14 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class _CartList extends StatefulWidget {
-  const _CartList({Key? key}) : super(key: key);
+class _CartList extends StatelessWidget {
+  _CartList({Key? key}) : super(key: key);
 
   @override
-  State<_CartList> createState() => _CartListState();
-}
+  // State<_CartList> createState() => _CartListState();
 
-class _CartListState extends State<_CartList> {
-  final _cart = CartModel();
+  // final _cart = CartModel();
+   final CartModel _cart = (VxState.store as Mystore).cart;
   @override
   Widget build(BuildContext context) {
     return _cart.items.isEmpty
@@ -76,7 +79,7 @@ class _CartListState extends State<_CartList> {
                   trailing: IconButton(
                       onPressed: () {
                         _cart.remove(_cart.items[index]);
-                        setState(() {});
+                        // setState(() {});
                       },
                       icon: Icon(CupertinoIcons.clear_circled)),
                   title: _cart.items[index].name.text.make(),

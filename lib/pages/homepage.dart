@@ -15,16 +15,15 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int i = 30;
-
-  String name = "Pramod";
+  @override
+  // State<Homepage> createState() => _HomepageState();
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    loadData();
-  }
+   void initState() {
+     // TODO: implement initState
+     super.initState();
+     loadData();
+   }
 
   loadData() async {
     await Future.delayed(const Duration(seconds: 2));
@@ -34,7 +33,7 @@ class _HomepageState extends State<Homepage> {
     CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
-    setState(() {});
+     setState(() {});
   }
 
   @override
