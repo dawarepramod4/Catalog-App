@@ -1,6 +1,19 @@
 # flutter_application_1
-I started my flutter journey from this project.
+I started my flutter journey from this project.<br />
 I used Learn by doing Approach to learn the flutter SDk.
 ## About Project
+This is a Sample Catalog App Where we can Login to the App, Buy Products,Add to cart and View the deatails of each product.
+1. I have used Hero animation while navigating from homepage to the detailpage.
+2. I have used velocity_x package to make buildin UI easier.
+3. The Data used in this project is a JSON file where every product details are saved.
+4. Given Below are the ScreenShots of the APP.
+## Homepage
+![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/Homepage.png)
+## Login Page
+![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/Login.png)
+## Detail Page
+![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/detailpage.png)
+## Cart Page
+![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/cart.png)
 
-The Data used in this project is a JSON file where every product details are saved.
+
