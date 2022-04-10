@@ -1,4 +1,4 @@
-# flutter_application_1
+# Catalog App
 I started my flutter journey from this project.<br />
 I used Learn by doing Approach to learn the flutter SDk.
 ## About Project
