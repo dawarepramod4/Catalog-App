@@ -8,12 +8,20 @@ This is a Sample Catalog App Where we can Login to the App, Buy Products,Add to 
 3. The Data used in this project is a JSON file where every product details are saved.
 4. Given Below are the ScreenShots of the APP.
 ## Homepage
-![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/Homepage.png)
+<img src="https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/Homepage.png" alt="Your image title" width="250"/>
+
+
 ## Login Page
-![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/Login.png)
+<img src="https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/Login.png" alt="Your image title" width="250"/>
+
+
 ## Detail Page
-![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/detailpage.png)
+<img src="https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/detailpage.png" alt="Your image title" width="250"/>
+
+
+
 ## Cart Page
-![plot](https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/cart.png)
+<img src="https://github.com/dawarepramod4/30daysOfFlutter/blob/day5/assets/Screens/cart.png" alt="Your image title" width="250"/>
+
 
 
